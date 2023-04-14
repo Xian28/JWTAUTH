@@ -41,6 +41,9 @@ server.post('/register', async (req, res) => {
         console.log(hashedPassword);
     }   
     catch(err){
-        console.log(err.message)
+        // console.log(err.message)
+        res.send({
+            error: `${err.message}`
+        })
     }
 })
