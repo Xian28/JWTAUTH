@@ -12,7 +12,7 @@ const createRefreshToken = userId => {
     })
 };
 
-const sendAccesToken = (res, req, accesstoken) => {
+const sendAccessToken = (res, req, accesstoken) => {
     res.send({
         accesstoken,
         email: req.body.email,
@@ -20,15 +20,15 @@ const sendAccesToken = (res, req, accesstoken) => {
 }
 
 const sendRefreshToken = (res, refreshtoken) => {
-    res.cooke('refreshtoken', token, {
+    res.cookie('refreshtoken', refreshtoken, {
         httpOnly: true,
         path: '/refresh_token',
     })
 }
 
-module.export = {
+module.exports = {
     createAccessToken,
     createRefreshToken,
-    sendAccesToken,
+    sendAccessToken,
     sendRefreshToken
 }
